@@ -17,7 +17,7 @@ public class FilterTest {
         // -------------------------------------------------------------------------------
         // >>> Run this to run your filter on a page /without/ displaying anything <<<
         // -------------------------------------------------------------------------------
-        // RunTheFilter();
+//        RunTheFilter();
     }
 
     private static void RunTheFilter() {
