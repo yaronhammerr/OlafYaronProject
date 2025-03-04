@@ -172,6 +172,7 @@ public class DImage {
         int spot = 0;
         for (int r = 0; r < pixheight; r++) {
             for (int c = 0; c < pixwidth; c++) {
+
                 pixels[spot++] = color(in.red[r][c], in.green[r][c], in.blue[r][c], in.alpha[r][c]);
             }
         }
