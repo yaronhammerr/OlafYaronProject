@@ -9,24 +9,31 @@ import java.util.ArrayList;
 public class CheckQuestionAmt implements PixelFilter, Interactive {
 
     public CheckQuestionAmt(){
-        PixelFilter Downsample=new Downsample();
+
         
 
     }
+
+    PixelFilter downsample =new Downsample();
+
     @Override
     public DImage processImage(DImage img) {
 
+        img= downsample.processImage(img);
+
         short[][] grid = img.getBWPixelGrid();
 
-        short[][] grid2 = new short[grid.length/2][grid[0].length/2];
 
-        for (int i = 0; i < grid.length-1; i=i+2) {
-            for (int j = 0; j < grid[0].length - 1; j = j + 2) {
 
-                grid2[i / 2][j / 2] = grid[i][j];
+//        short[][] grid2 = new short[grid.length/2][grid[0].length/2];
 
-            }
-        }
+//        for (int i = 0; i < grid.length-1; i=i+2) {
+//            for (int j = 0; j < grid[0].length - 1; j = j + 2) {
+//
+//                grid2[i / 2][j / 2] = grid[i][j];
+//
+//            }
+//        }
 
         int startRowHundreds =164;
         int startColHundreds =221;
@@ -58,14 +65,14 @@ public class CheckQuestionAmt implements PixelFilter, Interactive {
 //        }
 
 
-        int hundreds=findDigit(startRowHundreds, startColHundreds, endRowHundreds, sideLength, grid2);
-        int tens=findDigit(startRowTens, startColTens, endRowTens, sideLength, grid2);
-        int ones=findDigit(startRowOnes,startColOnes,endRowOnes, sideLength,grid2);
+        int hundreds=findDigit(startRowHundreds, startColHundreds, endRowHundreds, sideLength, grid);
+        int tens=findDigit(startRowTens, startColTens, endRowTens, sideLength, grid);
+        int ones=findDigit(startRowOnes,startColOnes,endRowOnes, sideLength,grid);
         System.out.print(hundreds);
         System.out.print(tens);
         System.out.print(ones);
 
-        img.setPixels(grid2);
+        img.setPixels(grid);
         return img;
     }
 
