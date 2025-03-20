@@ -5,7 +5,7 @@ import core.DImage;
 import core.DisplayWindow;
 import processing.core.PImage;
 
-public class FilterTest {
+public class FilterTest{
     public static String currentFolder = System.getProperty("user.dir") + "/";
 
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class FilterTest {
 
     private static void RunTheFilter() {
         System.out.println("Loading pdf....");
-        PImage in = PDFHelper.getPageImage("assets/OfficialOMRSampleDoc.pdf",1);
+        PImage in = PDFHelper.getPageImage("assets/OfficialOMRSampleDoc.pdf",3);
         DImage img = new DImage(in);       // you can make a DImage from a PImage
 
         System.out.println("Running filter on page 1....");

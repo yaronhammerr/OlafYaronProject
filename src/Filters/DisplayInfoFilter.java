@@ -3,8 +3,6 @@ package Filters;
 import Interfaces.PixelFilter;
 import core.DImage;
 
-import java.sql.SQLOutput;
-
 public class DisplayInfoFilter implements PixelFilter {
     public DisplayInfoFilter() {
         System.out.println("Filter running...");

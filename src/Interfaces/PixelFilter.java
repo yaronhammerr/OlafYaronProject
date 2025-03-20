@@ -9,4 +9,5 @@ public interface PixelFilter {
      * @return the filtered image
      */
     public DImage processImage(DImage img);
+
 }
